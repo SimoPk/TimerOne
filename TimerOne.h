@@ -228,7 +228,7 @@ class TimerOne
     //****************************
     void start() __attribute__((always_inline)) {
 	TCCR1B = 0;
-	TCNT1 = 0;		// TODO: does this cause an undesired interrupt?
+	TCNT1 = 1; // this works only if the timer is counting up, otherwise it will fire after 1 clock cycle
 	resume();
     }
     void stop() __attribute__((always_inline)) {
