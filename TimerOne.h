@@ -136,7 +136,7 @@ class TimerOne
     //****************************
     void start() __attribute__((always_inline)) {
 	TCCR1 = 0;
-	TCNT1 = 1;
+	TCNT1 = 1; // this works only if the timer is counting up, otherwise it will fire after 1 clock cycle
 	resume();
     }
     void stop() __attribute__((always_inline)) {
