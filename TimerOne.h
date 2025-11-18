@@ -136,7 +136,7 @@ class TimerOne
     //****************************
     void start() __attribute__((always_inline)) {
 	TCCR1 = 0;
-	TCNT1 = 0;
+	TCNT1 = 1;
 	resume();
     }
     void stop() __attribute__((always_inline)) {
